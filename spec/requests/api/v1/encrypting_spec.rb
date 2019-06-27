@@ -7,5 +7,6 @@ describe 'encrypts a message with a key' do
     parsed = JSON.parse(response.body, symbolize_names: true)
 
     expect(response).to be_successful
+    expect(response.length).to eq(11)
   end
 end
