@@ -18,4 +18,17 @@ class Enigma
     end
     rotated_indexes_array
   end
+
+  def gets_indexes_of_message(message)
+    indexed_message = []
+    message_array = message.downcase.split('')
+    message_array.each do |i|
+      @character_map.each do |x|
+        if i == x
+          indexed_message << @character_map.index(x)
+        end
+      end
+    end
+    indexed_message
+  end
 end
