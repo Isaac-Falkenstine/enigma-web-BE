@@ -11,4 +11,11 @@ class Enigma
     offset = Offset.new
     @offset_array = offset.get_offset
   end
+
+  def adds_rotation_to_index(message)
+    rotated_indexes_array = gets_indexes_of_message(message).map.with_index do |n, i|
+      n + total_rotation[i % total_rotation.length]
+    end
+    rotated_indexes_array
+  end
 end
