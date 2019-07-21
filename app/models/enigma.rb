@@ -10,6 +10,12 @@ class Enigma
     @rotation_array = rotor.rotation
     offset = Offset.new
     @offset_array = offset.get_offset
+    encryped_message = []
+    adds_rotation_to_index(message).each do |rotation|
+      new_index = @character_map.rotate(rotation)
+      encryped_message << new_index.first
+    end
+    encryped_message.join
   end
 
   def adds_rotation_to_index(message)
